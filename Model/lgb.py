@@ -58,8 +58,8 @@ for model_i in tqdm_notebook(range(int(N_MODEL))):
         start_time = time()
         print('Training on model {} - fold {}'.format(model_i + 1, fold_n + 1))
 
-        trn_data = lgb.Dataset(X.iloc[train_index], label=y.iloc[train_index])
-        val_data = lgb.Dataset(X.iloc[valid_index], label=y.iloc[valid_index])
+        trn_data = lgb.Dataset(X.iloc[train_index], label=y.iloc[train_index]) # categorical_feature = category
+        val_data = lgb.Dataset(X.iloc[valid_index], label=y.iloc[valid_index]) # categorical_feature = category
         clf = lgb.train(params, trn_data, num_boost_round=N_round, valid_sets=[trn_data, val_data], verbose_eval=100,
                         early_stopping_rounds=Early_Stopping_Rounds)  # , feval=evalerror
 
