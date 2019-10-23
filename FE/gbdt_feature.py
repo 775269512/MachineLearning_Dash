@@ -38,7 +38,7 @@ tree_feas = ["lgb_" + str(i) for i in range(1, N_round + 1)]
 train_lgb_feature.columns = tree_feas
 test_lgb_feature.columns = tree_feas
 
-# 注意: 生成的特征"lgb_x"是类别型变量
+# 注意: 生成的特征"lgb_xx"是类别型变量
 
 train_lgb_feature.shape, test_lgb_feature.shape
 
